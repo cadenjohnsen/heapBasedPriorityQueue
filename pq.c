@@ -93,7 +93,6 @@ void pq_insert(struct pq* pq, void* value, int priority) {
 		if (done == false) {
 			tmp = dynarray_get(pq->priority, i);
 			if (priority < *tmp) {
-				//dynarray_insert(pq->priority, i, &priority);
 				index = i;
 				done = true;
 			}
@@ -102,7 +101,6 @@ void pq_insert(struct pq* pq, void* value, int priority) {
 	*(pq->temp) = priority;
 	dynarray_insert(pq->priority, index, pq->temp);
 	dynarray_insert(pq->value, index, value);
-	////////////////free(temp);
 }
 
 /*
